@@ -43,8 +43,9 @@ user_input = st.text_area("Enter your text here:", "", height=150, placeholder="
 
 if st.button("Analyze Text"):
     if model and tokenizer and user_input:
+        
         # --- Prediction Logic ---
-        encoding = tokenizer.encode_plus(
+        encoding = tokenizer(
             user_input,
             add_special_tokens=True,
             max_length=128,
